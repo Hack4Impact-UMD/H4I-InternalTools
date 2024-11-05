@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Checkbox from "./FormComponents/Checkbox";
 //import Email from "./FormComponents/Email";
+import FileUpload from "./FormComponents/FileUpload";
 import MultipleChoice from "./FormComponents/MultipleChoice";
 import TextAnswer from "./FormComponents/TextAnswer";
 
 // Sample Interface for testing components
 interface FormData {
+  file: File;
   email: string;
   fullName: string;
   schoolYear: string;
@@ -19,10 +21,11 @@ const Form = () => {
     fullName: "",
     schoolYear: "",
     classes: [],
+    file: null as File | null,
   });
 
   // Handling changes for the text responses and radio box multiple choice.
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string | File) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: value,
@@ -72,6 +75,15 @@ const Form = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Temporary validation for files, will need logic for sending to DB.
+    if (!formData.file || formData.file.size === 0) {
+      console.log("Enter file");
+      return;
+    }
+
+    // Simulate a file upload
+    console.log("Simulate File upload");
     console.log("Form submitted:", formData);
   };
 
@@ -104,6 +116,11 @@ const Form = () => {
         }
         choiceName="classes"
         other
+      />
+      <FileUpload
+        heading="Resume"
+        required
+        onChange={(file) => handleInputChange("file", file)}
       />
       <button type="submit">Submit</button>
     </form>
