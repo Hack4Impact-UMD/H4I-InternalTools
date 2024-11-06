@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Checkbox from "./FormComponents/Checkbox";
 //import Email from "./FormComponents/Email";
-import FileUpload from "./FormComponents/FileUpload";
+// import FileUpload from "./FormComponents/FileUpload";
 import MultipleChoice from "./FormComponents/MultipleChoice";
 import TextAnswer from "./FormComponents/TextAnswer";
 
@@ -77,10 +77,10 @@ const Form = () => {
     e.preventDefault();
 
     // Temporary validation for files, will need logic for sending to DB.
-    if (!formData.file || formData.file.size === 0) {
-      console.log("Enter file");
-      return;
-    }
+    // if (!formData.file || formData.file.size === 0) {
+    //   console.log("Enter file");
+    //   return;
+    // }
 
     // Simulate a file upload
     console.log("Simulate File upload");
@@ -107,6 +107,7 @@ const Form = () => {
         onChange={(value) => handleInputChange("schoolYear", value)}
         choiceName="school-year"
         other
+        required
       />
       <Checkbox
         heading="Classes"
@@ -117,11 +118,10 @@ const Form = () => {
         choiceName="classes"
         other
       />
-      <FileUpload
+      {/* <FileUpload
         heading="Resume"
-        required
         onChange={(file) => handleInputChange("file", file)}
-      />
+      /> */}
       <button type="submit">Submit</button>
     </form>
   );

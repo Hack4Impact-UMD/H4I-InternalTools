@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import OtherOption from "./OtherOption";
 
 // Interface description
