@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Checkbox from "./FormComponents/Checkbox";
 //import Email from "./FormComponents/Email";
 // import FileUpload from "./FormComponents/FileUpload";
-import MultipleChoice from "./FormComponents/MultipleChoice";
+import Radiobox from "./FormComponents/Radiobox";
 import TextAnswer from "./FormComponents/TextAnswer";
 
 // Sample Interface for testing components
@@ -100,7 +100,7 @@ const Form = () => {
         onChange={(value) => handleInputChange("fullName", value)}
         placeholder="Short answer text"
       />
-      <MultipleChoice
+      <Radiobox
         heading="Year in School"
         options={["Fresh", "Soph"]}
         value={formData.schoolYear}
