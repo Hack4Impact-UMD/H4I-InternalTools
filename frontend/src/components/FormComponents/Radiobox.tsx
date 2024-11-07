@@ -10,7 +10,7 @@ import OtherOption from "./OtherOption";
 // onChange: Handles changing logic for the checkbox options.
 // choiceName: Identifier for these choices of options.
 // other: Optionally include on option for "other" where user can type a custom answer.
-interface MultipleChoiceProps {
+interface RadioboxProps {
   heading: string;
   subHeading?: string;
   options: string[];
@@ -21,7 +21,7 @@ interface MultipleChoiceProps {
   other?: boolean;
 }
 
-const MultipleChoice: React.FC<MultipleChoiceProps> = ({
+const Radiobox: React.FC<RadioboxProps> = ({
   heading,
   subHeading,
   options,
@@ -86,4 +86,4 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({
   );
 };
 
-export default MultipleChoice;
+export default Radiobox;

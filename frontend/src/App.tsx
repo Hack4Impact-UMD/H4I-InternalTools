@@ -1,8 +1,10 @@
 import "./App.css";
-import Form from "./components/Form";
+//import BootCampForm from "./components/BootCampForm";
+import TestForm from "./components/Forms/TestForm";
+// import Form from "./components/Form";
 
 function App() {
-  return <Form />;
+  return <TestForm />;
 }
 
 export default App;

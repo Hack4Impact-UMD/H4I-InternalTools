@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Checkbox from "./FormComponents/Checkbox";
+import Checkbox from "../FormComponents/Checkbox";
 //import Email from "./FormComponents/Email";
 // import FileUpload from "./FormComponents/FileUpload";
-import Radiobox from "./FormComponents/Radiobox";
-import TextAnswer from "./FormComponents/TextAnswer";
+import Radiobox from "../FormComponents/Radiobox";
+import TextAnswer from "../FormComponents/TextAnswer";
 
 // Sample Interface for testing components
 interface FormData {
