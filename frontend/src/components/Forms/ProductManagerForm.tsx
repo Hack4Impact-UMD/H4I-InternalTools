@@ -11,15 +11,9 @@ import TextAnswer from "../FormComponents/TextAnswer";
 const ProductManagerForm: React.FC<FormProps<ProductManagerData>> = ({
   onFormDataChange,
 }) => {
-  const [productManagerData, setProductManagerData] = useState({
-    whyPM: "",
-    ledAndDelegate: "",
-    offTrack: "",
-    unmotivatedTeam: "",
-    failedDeadline: "",
-    scenario: "",
-    useNotion: "",
-  });
+  const [productManagerData, setProductManagerData] = useState(
+    {} as ProductManagerData
+  );
 
   //   const handleFieldChange = (field: keyof ProductManagerData, value: string) => {
   //     setProductManagerData((prevData) => {

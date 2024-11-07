@@ -9,11 +9,7 @@ import TextAnswer from "../FormComponents/TextAnswer";
 // Consider the question of interest in applying for porject teams
 
 const BootCampForm: React.FC<FormProps<BootCampData>> = ({ onFormDataChange }) => {
-  const [bootCampData, setBootCampData] = useState({
-    interest: "",
-    newSkill: "",
-    challengePersist: "",
-  });
+  const [bootCampData, setBootCampData] = useState({} as BootCampData);
 
   const handleFieldChange = (field: keyof BootCampData, value: string) => {
     setBootCampData((prevData) => {
