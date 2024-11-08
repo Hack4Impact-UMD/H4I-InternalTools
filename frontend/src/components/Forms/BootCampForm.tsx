@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   BootCampData,
   FormProps,
@@ -8,17 +7,10 @@ import TextAnswer from "../FormComponents/TextAnswer";
 
 // Consider the question of interest in applying for porject teams
 
-const BootCampForm: React.FC<FormProps<BootCampData>> = ({ onFormDataChange }) => {
-  const [bootCampData, setBootCampData] = useState({} as BootCampData);
-
-  const handleFieldChange = (field: keyof BootCampData, value: string) => {
-    setBootCampData((prevData) => {
-      const updatedData = { ...prevData, [field]: value };
-      onFormDataChange(updatedData);
-      return updatedData;
-    });
-  };
-
+const BootCampForm: React.FC<FormProps<BootCampData>> = ({
+  onFormDataChange,
+  sectionFormData,
+}) => {
   return (
     <div>
       <div>
@@ -28,24 +20,24 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({ onFormDataChange }) =
       <TextAnswer
         heading="Tell us why you are interested in joining the bootcamp."
         subHeading="Please limit your response to a short paragrah (250 words)."
-        value={bootCampData.interest}
-        onChange={(value) => handleFieldChange("interest", value)}
+        value={sectionFormData.interest}
+        onChange={(value) => onFormDataChange("interest", value)}
         placeholder="Long answer text"
         required
       />
 
       <TextAnswer
         heading="Tell us about a time you had to learn a new skill to accomplish a task."
-        value={bootCampData.newSkill}
-        onChange={(value) => handleFieldChange("newSkill", value)}
+        value={sectionFormData.newSkill}
+        onChange={(value) => onFormDataChange("newSkill", value)}
         placeholder="Long answer text"
         required
       />
 
       <TextAnswer
         heading="Describe a time when you had to persist through a significant challenge. How did you approach it and what did you learn from that experience?"
-        value={bootCampData.challengePersist}
-        onChange={(value) => handleFieldChange("challengePersist", value)}
+        value={sectionFormData.challengePersist}
+        onChange={(value) => onFormDataChange("challengePersist", value)}
         placeholder="Long answer text"
         required
       />

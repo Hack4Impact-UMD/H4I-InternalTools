@@ -43,10 +43,6 @@ const OtherOption: React.FC<OtherOptionProps> = ({
         // Other box responses are denoted with a special character for logic within
         // the Form component.
         onChange(e.target.value + "$", isChecked);
-        // Extra logic for radio boxes
-        // if (checked !== undefined) {
-        //   setIsOtherSelected?.(false);
-        // }
       }
       return e.target.checked;
     });
@@ -89,6 +85,7 @@ const OtherOption: React.FC<OtherOptionProps> = ({
       onChange(e.target.value + "$", false);
     }
   };
+
   return (
     <div>
       <input

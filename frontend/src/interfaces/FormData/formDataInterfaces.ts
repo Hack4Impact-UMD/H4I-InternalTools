@@ -1,4 +1,4 @@
-// Question for the Product Manager application
+// Questions for the Product Manager application
 export interface ProductManagerData {
   whyPM: string;
   ledAndDelegate: string;
@@ -7,6 +7,8 @@ export interface ProductManagerData {
   failedDeadline: string;
   scenario: string;
   useNotion: string;
+  testFile: File;
+  testCB: string[];
 }
 
 // Questions for the BootCamp application
@@ -18,6 +20,11 @@ export interface BootCampData {
 
 // All forms will need to import this interface to update the state in the
 // parent.
-export interface FormProps<T> {
-  onFormDataChange: (data: T) => void;
+export interface FormProps<T extends object> {
+  onFormDataChange: (
+    field: keyof T,
+    value: T[keyof T],
+    otherUnchecked?: boolean
+  ) => void;
+  sectionFormData: T;
 }
