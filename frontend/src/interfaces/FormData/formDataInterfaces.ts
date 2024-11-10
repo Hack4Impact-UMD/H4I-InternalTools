@@ -41,6 +41,27 @@ export interface TechLeadData {
   comments: string;
 }
 
+// Questions for the Designer/UX application
+export interface UXData {
+  whyUX: string;
+  strongFit: string;
+  workflow: string;
+  situationalResponse: string;
+  collaboration: string;
+  figmaExp: string;
+  yoe: string;
+  portfolio: string;
+  attachments: File;
+}
+
+// Questions for the Sourcing application
+export interface SourcingData {
+  clubExp: string;
+  videoCalls: string;
+  strongFit: string;
+  exampleTask: string;
+  npoExp: string;
+}
 
 // All forms will need to import this interface to update the state in the
 // parent.

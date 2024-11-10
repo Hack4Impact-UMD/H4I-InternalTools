@@ -1,10 +1,26 @@
+// App.tsx
 import "./App.css";
-//import BootCampForm from "./components/BootCampForm";
+import { AuthProvider, useAuth } from "./components/test/authhandle"; // Adjust the path as needed
+import Form from "./components/Forms/Form"; // add form components
 import TestForm from "./components/Forms/TestForm";
-// import Form from "./components/Form";
+import SignIn from "./components/test/SignIn"; // signincomponent from other team
+
+const AppContent = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <div>
+      {isAuthenticated ? <TestForm /> : <SignIn />}
+    </div>
+  );
+};
 
 function App() {
-  return <TestForm />;
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
 }
 
 export default App;
