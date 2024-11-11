@@ -1,4 +1,3 @@
-import './App.css'
 import StatusPage from './components/StatusPage'
 
 function App() {
