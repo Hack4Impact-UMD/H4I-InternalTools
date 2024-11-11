@@ -11,10 +11,16 @@ interface LoginCardProps {
 
 function loginCard({ title, otherTitle, prompt }: LoginCardProps) {
   const [inputValue, setInputValue] = useState<string>('');
+  const [passwordValue, setPasswordValue] = useState<string>('');
 
-  // Update the input value on change
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  // Update the email address input value on change
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+  };
+
+  // Update the password input value on change
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswordValue(event.target.value);
   };
 
   // Handle button click
@@ -22,7 +28,7 @@ function loginCard({ title, otherTitle, prompt }: LoginCardProps) {
     // Placeholder for actual action
     // This should check the validity of the inputs in the textboxes
     // Either throw an error or log the user in
-    alert(`Submitted: ${inputValue}`); 
+    alert(`${inputValue} logged in!`); 
   };
 
   return (
@@ -40,13 +46,21 @@ function loginCard({ title, otherTitle, prompt }: LoginCardProps) {
       </p>
       <div className="centered">
         <h1 className="title">{title}</h1>
-        <h3 className="prompt">Enter Your {prompt}</h3>
-        {/*Textbox to enter company domain or school email address*/}
+        <h3 className="prompt">Enter your login info</h3>
+        {/*Textbox to enter email address*/}
         <input
           type="text"
           value={inputValue}
-          onChange={handleChange}
-          placeholder={`${prompt}`}
+          onChange={handleEmailChange}
+          placeholder={`Email address`}
+          className="textbox"
+        />
+        {/*Textbox to enter password*/}
+        <input
+          type="password"
+          value={passwordValue}
+          onChange={handlePasswordChange}
+          placeholder={`Password`}
           className="textbox"
         />
         <button onClick={handleClick} className="button">Continue</button>
