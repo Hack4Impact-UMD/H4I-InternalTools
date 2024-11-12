@@ -1,0 +1,72 @@
+body {
+    overflow: hidden;
+}
+
+.status-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background: var(--custom-lightgray);
+}
+
+.status-page .header {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-page .header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.application-table {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.application-table .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--custom-gray);
+}
+
+.application-table .row .item {
+    padding: 1rem 1.5rem;
+    border-right: 1px solid var(--custom-gray);
+    text-align: center;
+    color: black;
+}
+
+.application-table .row h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.application-table .row p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.application-table .row .application-link {
+    color: var(--custom-blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.application-table .row .application-link:visited {
+    color: var(--custom-purple);
+}
+
+.application-table .row .application-link:hover,
+.application-table .row .application-link:active {
+    color: var(--custom-purple);
+}
