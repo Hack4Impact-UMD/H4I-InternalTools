@@ -1,12 +1,24 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import { ApplicationStatus, getApplicationStatus } from '../../../h4i-internal/src/applicationStatus';
 import '../styles/statuspage.css';
 
 function StatusPage() {
+    const [status, setStatus] = useState("");
+    const [dateSubmitted, setDateSubmitted] = useState("");
+    const [applicationUrl, setApplicationUrl] = useState("/");
 
-    // TODO: Pull these fields from Firebase
-    const status = "Under Review";
-    const dateSubmitted = "01/01/2025";
-    const applicationUrl = "/";
+    async function fetchApplicationFields() {
+        // TODO: Get the user's ID to use as the parameter for getApplicationStatus()
+        const applicationStatus: ApplicationStatus = await getApplicationStatus("0000");
+        
+        setStatus(applicationStatus.status);
+        setDateSubmitted(applicationStatus.dateReceived);
+        setApplicationUrl(applicationStatus.applicationUrl);
+    }
+
+    useEffect(() => {
+        fetchApplicationFields();
+    }, [])
 
     function openApplication() {
         window.open(applicationUrl, "_blank")
@@ -44,8 +56,6 @@ function StatusPage() {
                         <p>
                             { status }
                         </p>
-                        {/* TODO: Add a '(?)' symbol next to the status that displays a
-                            description of the status when hovered over */}
                     </div>
                     <div className="item">
                         <p>

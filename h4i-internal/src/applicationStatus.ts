@@ -1,21 +1,16 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDoc, doc, updateDoc } from 'firebase/firestore/lite';
-
-
-//replace the following with Firebase project configuration
-const firebaseConfig = {
-  //...
-};
+import { firebaseConfig } from '../config/firebase';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //return type
-interface ApplicationStatus {
-    status: string;
-    dateReceived: string;
-    applicationUrl?: string;
-  }
+export interface ApplicationStatus {
+  status: string;
+  dateReceived: string;
+  applicationUrl: string;
+}
 
 
 export async function getApplicationStatus(applicationId: string): Promise<ApplicationStatus> {
