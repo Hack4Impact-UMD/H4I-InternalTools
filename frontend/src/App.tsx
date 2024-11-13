@@ -1,9 +1,9 @@
 // App.tsx
 import "./App.css";
-import { AuthProvider, useAuth } from "./components/test/authhandle"; // Adjust the path as needed
+import { AuthProvider, useAuth } from "./components/test-auth/authhandle"; // Adjust the path as needed
 import Form from "./components/Forms/Form"; // add form components
 import TestForm from "./components/Forms/TestForm";
-import SignIn from "./components/test/SignIn"; // signincomponent from other team
+import SignIn from "./components/test-auth/SignIn"; // signincomponent from other team
 
 const AppContent = () => {
   const { isAuthenticated } = useAuth();
