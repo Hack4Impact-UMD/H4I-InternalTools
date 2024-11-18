@@ -8,10 +8,10 @@
 }
 
 .centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -74,4 +74,20 @@
 
 .switch-link:hover {
   text-decoration: underline;
+}
+
+/* Error styles for input boxes */
+.textbox.error {
+  border: 1px solid #ff4d4f; /* Red border for error */
+  background-color: #fff0f0; /* Light red background */
+  color: #d32f2f; /* Red text */
+}
+
+/* Error message styles */
+.error-message {
+  color: #d32f2f; /* Red color for error text */
+  font-size: 14px; /* Slightly smaller font size */
+  margin-top: -15px; /* Adjust to position error message below the input */
+  margin-bottom: 10px;
+  text-align: center; /* Align message with input box */
 }
