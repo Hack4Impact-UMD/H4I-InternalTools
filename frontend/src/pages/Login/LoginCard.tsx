@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import "./loginCard.css";
 
 import { FirebaseApp, FirebaseOptions, getApp, initializeApp } from "firebase/app";
@@ -9,7 +8,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import firebaseConfig from "../../backend/config/firebase";
+import firebaseConfig from "../../../backend/config/firebase";
 
 interface LoginCardProps {
   title: string;
