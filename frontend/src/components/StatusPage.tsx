@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ApplicationStatus, getApplicationStatus } from '../../../h4i-internal/src/applicationStatus';
+import { Status, ApplicationStatus, getApplicationStatus } from '../../../h4i-internal/src/applicationStatus';
 import '../styles/statuspage.css';
 
 function StatusPage() {
-    const [status, setStatus] = useState("");
+    const [status, setStatus] = useState(Status.SUBMITTED);
     const [dateSubmitted, setDateSubmitted] = useState("");
     const [applicationUrl, setApplicationUrl] = useState("/");
 
@@ -20,54 +20,12 @@ function StatusPage() {
         fetchApplicationFields();
     }, [])
 
-    function openApplication() {
-        window.open(applicationUrl, "_blank")
-    }
-
     return (
         <div className="status-page">
             <div className="header">
                 <h1>
-                    Your Application
+                    Current Application Status
                 </h1>
-            </div>
-
-            <div className="application-table">
-                <div className="row">
-                    <div className="item">
-                        <h3>
-                            Status
-                        </h3>
-                    </div>
-                    <div className="item">
-                        <h3>
-                            Date Received
-                        </h3>
-                    </div>
-                    <div className="item">
-                        <h3>
-                            View Application
-                        </h3>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="item">
-                        <p>
-                            { status }
-                        </p>
-                    </div>
-                    <div className="item">
-                        <p>
-                            { dateSubmitted }
-                        </p>
-                    </div>
-                    <div className="item" onClick={ () => openApplication() }>
-                        <p className="application-link">
-                            View
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     )

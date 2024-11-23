@@ -3,8 +3,9 @@
 }
 
 :root {
-  --custom-blue: rgb(6, 104, 233);
-  --custom-purple: rgb(143, 8, 177);
-  --custom-lightgray: rgb(244, 246, 248);
-  --custom-gray: rgb(224, 224, 224);
+  --custom-lightblue: rgb(194, 224, 251);
+  --custom-darkblue: rgb(41, 105, 196);
+  --custom-teal: rgb(203, 248, 243);
+  --custom-gray: rgb(217, 217, 217);
+  --custom-red: rgb(224, 41, 41);
 }
