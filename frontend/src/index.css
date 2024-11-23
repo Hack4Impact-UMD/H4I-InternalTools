@@ -12,5 +12,84 @@
   --custom-teal: rgb(203, 248, 243);
   --custom-lightgray: rgb(232, 232, 232);
   --custom-gray: rgb(217, 217, 217);
+  --custom-darkgray: rgb(181, 180, 180);
   --custom-red: rgb(224, 41, 41);
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 9rem;
+  padding: 0 1rem;
+  justify-content: space-evenly;
+  background: linear-gradient(to right, var(--custom-lightblue), var(--custom-teal));
+}
+
+.navbar .sign-out-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .5rem 3rem;
+  text-align: center;
+}
+
+.navbar .sign-out-button p {
+  font-family: "Rubik", "Karla", sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.navbar .sign-out-button p:hover {
+  text-decoration: underline;
+}
+
+.navbar .site-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 23%;
+  pointer-events: none;
+}
+
+.navbar .tab-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar .tab-container a {
+  display: flex;
+  width: 20%;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.7rem;
+  border-radius: 10px 10px 0 0;
+  background: var(--custom-gray);
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  transition: background .1s;
+}
+
+.navbar .tab-container a:hover {
+  background: var(--custom-lightgray);
+}
+
+.navbar .tab-container a.active {
+  background: white;
+  pointer-events: none;
 }

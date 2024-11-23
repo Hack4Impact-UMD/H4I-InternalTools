@@ -1,12 +1,6 @@
 import { ReactNode } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-interface Props {
-    id: string;
-    to: string;
-    children: ReactNode
-}
-
 function Navbar() {
     function handleSignout() {
         window.open("/", "_self");
@@ -28,7 +22,13 @@ function Navbar() {
     )
 }
 
-function NavLink({ id, to, children, ...props }: Props) {
+interface NavLinkProps {
+    id: string;
+    to: string;
+    children: ReactNode
+}
+
+function NavLink({ id, to, children, ...props }: NavLinkProps) {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true});
     return (

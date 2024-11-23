@@ -6,13 +6,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export enum Status {
-  SUBMITTED = 0,
-  UNDER_REVIEW = 1,
-  INTERVIEW = 2,
-  REJECTED = 3,
-  ACCEPTED = 4,
-  CONFIRMED = 5,
-  DECLINED = 6
+  INCOMPLETE = 0,
+  SUBMITTED = 1,
+  UNDER_REVIEW = 2,
+  INTERVIEW = 3,
+  REJECTED = 4,
+  ACCEPTED = 5,
+  CONFIRMED = 6,
+  DECLINED = 7
 }
 
 //return type

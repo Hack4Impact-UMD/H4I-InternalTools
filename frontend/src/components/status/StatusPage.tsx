@@ -9,7 +9,7 @@ import DecisionPage from './DecisionPage';
 import AcceptanceBox from './AcceptanceBox';
 
 function StatusPage() {
-    const [status, setStatus] = useState(Status.SUBMITTED);
+    const [status, setStatus] = useState(Status.INCOMPLETE);
     const [dateSubmitted, setDateSubmitted] = useState("");
     const [applicationUrl, setApplicationUrl] = useState("/");
 
@@ -28,6 +28,8 @@ function StatusPage() {
         fetchApplicationFields();
     }, [])
 
+    const incompleteApplicationError = "Looks like you haven't submitted your application yet. Please submit when you're ready.";
+
     return (
         <>
             <Navbar />
@@ -37,6 +39,15 @@ function StatusPage() {
                         Current Application Status
                     </h1>
                 </div>
+
+                <ProgressBar fillLevel={ status }/>
+
+                { status == 0 &&
+                    <div className="incomplete-application-error">
+                        <p>
+                            { incompleteApplicationError }
+                        </p>
+                    </div> }
             </div>
         </>
     )
