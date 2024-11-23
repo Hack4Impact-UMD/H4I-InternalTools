@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: "Karla", "Rubik", sans-serif;
 }
 
 :root {
   --custom-lightblue: rgb(194, 224, 251);
   --custom-darkblue: rgb(41, 105, 196);
   --custom-teal: rgb(203, 248, 243);
+  --custom-lightgray: rgb(232, 232, 232);
   --custom-gray: rgb(217, 217, 217);
   --custom-red: rgb(224, 41, 41);
 }

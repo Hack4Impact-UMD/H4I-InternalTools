@@ -1,16 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-body {
-    overflow: hidden;
-}
-
 .status-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-family: "Karla", sans-serif;
     background: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 1rem;
+    height: 17%;
+    width: 100%;
+    background: linear-gradient(to right, var(--custom-lightblue), var(--custom-teal));
+}
+
+.navbar .sign-out-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem 3rem;
+    text-align: center;
+}
+
+.navbar .sign-out-button p {
+    font-family: "Rubik", "Karla", sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.navbar .sign-out-button p:hover {
+    text-decoration: underline;
+}
+
+.navbar .site-logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 23%;
+    pointer-events: none;
+}
+
+.navbar .tab-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar .tab-container a {
+    display: flex;
+    width: 20%;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.8rem;
+    border-radius: 10px 10px 0 0;
+    background: var(--custom-gray);
+    color: black;
+    text-decoration: none;
+    user-select: none;
+    transition: background .1s;
+}
+
+.navbar .tab-container a:hover {
+    background: var(--custom-lightgray);
+}
+
+.navbar .tab-container a.active {
+    background: white;
+    pointer-events: none;
 }
