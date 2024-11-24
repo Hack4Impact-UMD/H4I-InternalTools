@@ -39,13 +39,14 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: .5rem 3rem;
+  padding: 1.2rem 3rem;
   text-align: center;
 }
 
 .navbar .sign-out-button p {
   font-family: "Rubik", "Karla", sans-serif;
   font-size: 1.1rem;
+  font-weight: 350;
   cursor: pointer;
 }
 
@@ -59,6 +60,7 @@
   bottom: 0;
   margin: auto;
   width: 23%;
+  min-width: 10rem;
   pointer-events: none;
 }
 
@@ -75,11 +77,13 @@
 .navbar .tab-container a {
   display: flex;
   width: 20%;
+  min-width: 10rem;
   height: 3.5rem;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 1.7rem;
+  font-weight: 300;
   border-radius: 10px 10px 0 0;
   background: var(--custom-gray);
   color: black;

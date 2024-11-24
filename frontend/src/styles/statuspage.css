@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 1rem;
     margin-top: 9rem;
-    padding: 0 8rem;
+    padding: 0 8rem 2rem;
     align-items: center;
     justify-content: center;
     background: white;
@@ -40,6 +40,7 @@
 .progress-bar-container .bar {
     display: flex;
     width: 100%;
+    min-width: 20rem;
     height: 2.5rem;
     align-items: center;
     border: solid 1px var(--custom-darkgray);
@@ -59,13 +60,14 @@
     display: grid;
     grid-template-columns: 20% 30% 30% 20%;
     width: 100%;
+    min-width: 20rem;
     padding: 1.5rem 0 2.5rem;
 }
 
 .progress-bar-container .labels p {
     text-align: center;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .progress-bar-container .labels p.passed {
@@ -79,6 +81,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    min-width: 20rem;
     height: 11rem;
     padding: 1rem;
     border: solid 8px var(--custom-lightblue);
@@ -95,7 +98,7 @@
     justify-content: center;
     text-align: center;
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     background: var(--custom-darkblue);
     color: white;
     cursor: pointer;
@@ -108,11 +111,11 @@
 }
 
 .status-box .title-col {
-    width: 60%;
+    width: 70%;
 }
 
 .status-box .title-col p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
@@ -125,12 +128,12 @@
 }
 
 .status-box .status-col-header {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
 }
 
 .status-box .status-col .status {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
@@ -147,7 +150,7 @@
 }
 
 .status-box .download-col .download-col-header {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
 }
 
@@ -175,8 +178,8 @@
 }
 
 .decision-page .back-button p {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 350;
     font-family: "Rubik", "Karla", sans-serif;
     color: var(--custom-darkgray);
     cursor: pointer;
@@ -211,12 +214,13 @@
 .decision-page .message-container .header {
     width: 70%;
     text-align: center;
-    font-size: 2.3rem;
-    font-weight: 400;
+    font-size: 2.6rem;
+    font-weight: 350;
 }
 
 .decision-page .message-container .message {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 350;
 }
 
 /* ACCEPTANCE BOX */
@@ -262,6 +266,8 @@
 
 .acceptance-box .confirmation-form .question {
     padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 .acceptance-box .confirmation-form #confirmation-dropdown {
@@ -269,7 +275,8 @@
     padding: .7rem;
     border: solid 1px var(--custom-darkgray);
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 350;
     color: var(--custom-darkgray);
 }
 
@@ -283,7 +290,7 @@
     text-align: center;
     border: none;
     border-radius: 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     background: var(--custom-darkblue);
     color: white;
     cursor: pointer;
@@ -293,4 +300,115 @@
 
 .acceptance-box .confirmation-form .submit:hover {
     box-shadow: 0 0 .4rem var(--custom-darkblue);
+}
+
+@media screen and (max-width: 1050px) {
+    .progress-bar-container .labels {
+        width: 125%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .progress-bar-container .bar {
+        display: flex;
+        width: 180%;
+        height: 2.5rem;
+        align-items: center;
+        border: solid 1px var(--custom-darkgray);
+        border-radius: 20px;
+        box-shadow: 0 .2rem .5rem var(--custom-gray);
+        box-sizing: border-box;
+    }
+
+    .progress-bar-container .labels {
+        grid-template-columns: 30% 20% 20% 30%;
+        width: 200%;
+    }
+
+    .status-box {
+        grid-template-columns: none;
+        grid-template-rows: 20% 40% 40%;
+        height: 30rem;
+        padding: 1rem;
+        align-items: start;
+    }
+
+    .status-box .button {
+        bottom: 0;
+        padding: .5rem 2.5rem;
+    }
+    
+    .status-box .title-col {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .status-box .status-col {
+        position: relative;
+        width: 100%;
+        padding-bottom: 5rem;
+        justify-self: start;
+    }
+    
+    .status-box .download-col {
+        position: relative;
+        margin-top: 2rem;
+        padding-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .decision-page .content {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .decision-page .acceptance-box {
+        padding: 2rem 10rem 10rem;
+    }
+
+    .acceptance-box .confirmation-form {
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .progress-bar-container .bar {
+        width: 250%;
+    }
+
+    .progress-bar-container .labels {
+        width: 280%;
+    }
+
+    .progress-bar-container .labels p {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .progress-bar-container .bar {
+        width: 330%;
+    }
+
+    .progress-bar-container .labels {
+        width: 330%;
+    }
+
+    .progress-bar-container .labels p {
+        font-size: 1.1rem;
+    }
+
+    .decision-page .message-container {
+        width: 65%;
+    }
+
+    .decision-page .message-container .header {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 350;
+    }
 }
