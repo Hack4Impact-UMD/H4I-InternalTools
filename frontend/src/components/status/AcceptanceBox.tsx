@@ -25,7 +25,7 @@ function AcceptanceBox({ status, setStatus }: AcceptanceBoxProps) {
 
     return (
         <div className="acceptance-box">
-            { status >= 6 &&
+            { status > 5 &&
                 <>
                     <div className="header submitted">
                         <p>
@@ -38,7 +38,7 @@ function AcceptanceBox({ status, setStatus }: AcceptanceBoxProps) {
                     </div>
                 </> }
             
-            { status < 6 &&
+            { status <= 5 &&
                 <>
                     <div className="header unsubmitted">
                         <p>

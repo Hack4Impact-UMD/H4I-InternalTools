@@ -7,7 +7,7 @@ import StatusBox from './StatusBox';
 
 function StatusPage() {
     // TODO: Get these fields from the centralized state
-    const status = Status.INCOMPLETE;
+    const status = Status.ACCEPTED;
     const applicationUrl = "/";
 
     const incompleteApplicationError = "Looks like you haven't submitted your application yet. Please submit when you're ready.";
