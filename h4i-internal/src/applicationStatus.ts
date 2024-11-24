@@ -9,11 +9,13 @@ export enum Status {
   INCOMPLETE = 0,
   SUBMITTED = 1,
   UNDER_REVIEW = 2,
-  INTERVIEW = 3,
+  INTERVIEW_TBD = 3.0,
+  INTERVIEW_SCHEDULED = 3.1,
+  INTERVIEW_COMPLETE = 3.2,
   REJECTED = 4,
-  ACCEPTED = 5,
-  CONFIRMED = 6,
-  DECLINED = 7
+  ACCEPTED = 5.0,
+  CONFIRMED = 5.1,
+  DECLINED = 5.2
 }
 
 //return type

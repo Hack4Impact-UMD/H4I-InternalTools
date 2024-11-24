@@ -3,16 +3,16 @@ interface ProgressBarProps {
 }
 
 function ProgressBar({ fillLevel }: ProgressBarProps) {
-    const fillPercentage = fillLevel / 4 * 100;
+    const fillPercentage = Math.min(fillLevel / 4 * 100, 100);
 
     return (
         <div className="progress-bar-container">
-            <div className="progress-bar">
+            <div className="bar">
                 { fillPercentage > 0 &&
-                    <div className="progress-bar-fill" style={{ width: `${ fillPercentage }%` }} /> }
+                    <div className="fill" style={{ width: `${ fillPercentage }%` }} /> }
             </div>
 
-            <div className="progress-bar-labels">
+            <div className="labels">
                 <p className={fillPercentage >= 25 ? "passed" : ""}>
                     Submitted
                 </p>
@@ -20,9 +20,9 @@ function ProgressBar({ fillLevel }: ProgressBarProps) {
                     Under Review
                 </p>
                 <p className={fillPercentage >= 75 ? "passed" : ""}>
-                    Interview (If Applicable)
+                    Interview
                 </p>
-                <p className={fillPercentage == 100 ? "passed" : ""}>
+                <p className={fillPercentage === 100 ? "passed" : ""}>
                     Decision
                 </p>
             </div>
