@@ -4,12 +4,30 @@ import FileUpload from "../FormComponents/FileUpload";
 
 import Radiobox from "../FormComponents/Radiobox";
 import TextAnswer from "../FormComponents/TextAnswer";
+import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'UX_form_data';
+
+
 interface UXFormProps {
   onFormDataChange: (field: keyof UXData, value: any) => void;
   sectionFormData: UXData;
 }
 
 const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) => {
+
+    useFormPersistence(
+        STORAGE_KEY,
+        { ...sectionFormData, testFile: null },
+        (savedData) => {
+          Object.entries(savedData).forEach(([key, value]) => {
+            if (value && key !== 'testFile') {
+              onFormDataChange(key as keyof UXData, value);
+            }
+          });
+        }
+      );
+
   return (
     <div>
         <div>

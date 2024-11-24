@@ -3,11 +3,27 @@ import {
     EngineerData,
   } from "../../interfaces/FormData/formDataInterfaces";
   import TextAnswer from "../FormComponents/TextAnswer";
+  import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'engineer_form_data';
   
   const EngineerForm: React.FC<FormProps<EngineerData>> = ({
     onFormDataChange,
     sectionFormData,
   }) => {
+
+    useFormPersistence(
+      STORAGE_KEY,
+      { ...sectionFormData, testFile: null },
+      (savedData) => {
+        Object.entries(savedData).forEach(([key, value]) => {
+          if (value && key !== 'testFile') {
+            onFormDataChange(key as keyof EngineerData, value);
+          }
+        });
+      }
+    );
+
     return (
       <div>
         <div>

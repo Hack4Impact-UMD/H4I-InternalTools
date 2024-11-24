@@ -4,13 +4,28 @@ import {
 } from "../../interfaces/FormData/formDataInterfaces";
 
 import TextAnswer from "../FormComponents/TextAnswer";
+import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'product_manager_form_data';
 
 // Consider the question of interest in applying for porject teams
-
 const BootCampForm: React.FC<FormProps<BootCampData>> = ({
   onFormDataChange,
   sectionFormData,
 }) => {
+
+  useFormPersistence(
+    STORAGE_KEY,
+    { ...sectionFormData, testFile: null },
+    (savedData) => {
+      Object.entries(savedData).forEach(([key, value]) => {
+        if (value && key !== 'testFile') {
+          onFormDataChange(key as keyof BootCampData, value);
+        }
+      });
+    }
+  );
+
   return (
     <div>
       <div>

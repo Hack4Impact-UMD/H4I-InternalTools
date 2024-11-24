@@ -7,11 +7,29 @@ import FileUpload from "../FormComponents/FileUpload";
 
 import Radiobox from "../FormComponents/Radiobox";
 import TextAnswer from "../FormComponents/TextAnswer";
+import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'product_manager_form_data'; 
+
 
 const ProductManagerForm: React.FC<FormProps<ProductManagerData>> = ({
   onFormDataChange,
   sectionFormData,
 }) => {
+
+  useFormPersistence(
+    STORAGE_KEY, 
+    { ...sectionFormData, testFile: null },
+    (savedData) => {
+      Object.entries(savedData).forEach(([key, value]) => {
+        if (value && key !== 'testFile') {
+          onFormDataChange(key as keyof ProductManagerData, value);
+        }
+      });
+    }
+  );
+
+
   return (
     <div>
       <div>

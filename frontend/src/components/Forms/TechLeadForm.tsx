@@ -3,11 +3,27 @@ import {
     TechLeadData,
   } from "../../interfaces/FormData/formDataInterfaces";
   import TextAnswer from "../FormComponents/TextAnswer";
+  import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'tech_lead_form_data';
   
   const TechLeadForm: React.FC<FormProps<TechLeadData>> = ({
     onFormDataChange,
     sectionFormData,
   }) => {
+
+    useFormPersistence(
+      STORAGE_KEY,
+      { ...sectionFormData, testFile: null },
+      (savedData) => {
+        Object.entries(savedData).forEach(([key, value]) => {
+          if (value && key !== 'testFile') {
+            onFormDataChange(key as keyof TechLeadData, value);
+          }
+        });
+      }
+    );
+
     return (
       <div>
         <div>
