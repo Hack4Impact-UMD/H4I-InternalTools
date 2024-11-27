@@ -1,17 +1,29 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDoc, doc, updateDoc } from 'firebase/firestore/lite';
+import { getFirestore, getDoc, doc, updateDoc } from 'firebase/firestore/lite';
 import { firebaseConfig } from '../config/firebase';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+export enum Status {
+  INCOMPLETE = 0.0,
+  SUBMITTED = 1.0,
+  UNDER_REVIEW = 2.0,
+  INTERVIEW_TBD = 3.0,
+  INTERVIEW_SCHEDULED = 3.1,
+  INTERVIEW_COMPLETE = 3.2,
+  REJECTED = 4.0,
+  ACCEPTED = 5.0,
+  CONFIRMED = 5.1,
+  DECLINED = 5.2
+}
+
 //return type
 export interface ApplicationStatus {
-  status: string;
+  status: Status;
   dateReceived: string;
   applicationUrl: string;
 }
-
 
 export async function getApplicationStatus(applicationId: string): Promise<ApplicationStatus> {
     try {
@@ -35,9 +47,7 @@ export async function getApplicationStatus(applicationId: string): Promise<Appli
     }
 }
 
-type StatusType = 'pending' | 'approved' | 'rejected' | 'under_review';
-
-export async function setApplicationStatus(applicationId: string, newStatus: StatusType): Promise<void> {
+export async function setApplicationStatus(applicationId: string, newStatus: Status): Promise<void> {
   try {
       const applicationRef = doc(db, 'applications', applicationId); //references application in firebase
       const applicationSnap = await getDoc(applicationRef); //gets document
