@@ -6,7 +6,7 @@ import AcceptanceBox from './AcceptanceBox';
 
 function DecisionPage() {
     // TODO: Get this field from the centralized state
-    const [status, setStatus] = useState(Status.ACCEPTED);
+    const [status, setStatus] = useState(Status.CONFIRMED);
     if (status < 4) {
         // No decision ready yet
         openStatusPage();
