@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
 /* General Styles */
 .red-text {
   color: red;
@@ -12,11 +14,43 @@
 
 .form-label {
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-size: 24px;
 }
 
 .form-input {
   padding: 0.5rem;
   font-size: 1rem;
   width: 50%;
+}
+
+.form-sublabel {
+  font-size: 20px;
+}
+
+/* Forms */
+.form-body {
+  background-color: #C9E5FB;
+  font-family: 'Karla', sans-serif;
+  border-radius: 8px;
+  padding: 20px 2px;
+}
+
+.form-heading {
+  text-align: center;
+  font-size: 40px;
+  margin: 20px;
+}
+
+.form-responsibilities-list {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.form-questions {
+  padding: 20px;
+  background-color: #fff;
+  font-size: 18px;
+  margin: 20px;
 }
