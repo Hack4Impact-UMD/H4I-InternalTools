@@ -1,6 +1,9 @@
 import React from "react";
 import { SourcingData } from "../../interfaces/FormData/formDataInterfaces";
 import TextAnswer from "../FormComponents/TextAnswer";
+import { useFormPersistence } from '../../hooks/useFormPersistence';
+
+const STORAGE_KEY = 'sourcing_form_data';
 
 interface SourcingFormProps {
   onFormDataChange: (field: keyof SourcingData, value: any) => void;
@@ -8,6 +11,19 @@ interface SourcingFormProps {
 }
 
 const SourcingForm: React.FC<SourcingFormProps> = ({ onFormDataChange, sectionFormData }) => {
+  
+  useFormPersistence(
+    STORAGE_KEY,
+    { ...sectionFormData, testFile: null },
+    (savedData) => {
+      Object.entries(savedData).forEach(([key, value]) => {
+        if (value && key !== 'testFile') {
+          onFormDataChange(key as keyof SourcingData, value);
+        }
+      });
+    }
+  );
+
   return (
     <div>
       <div>
