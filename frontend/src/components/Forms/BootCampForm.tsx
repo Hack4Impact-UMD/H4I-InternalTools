@@ -5,6 +5,7 @@ import {
 
 import TextAnswer from "../FormComponents/TextAnswer";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
+import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'product_manager_form_data';
 
@@ -28,24 +29,29 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
 
   return (
     <div className="form-body">
+      <img className="form-logo" src={h4iLogo} alt="H4I" />
       <div className="form-heading">
         <strong>Bootcamp Questions</strong>
       </div>
 
       <div className="form-questions">
-        <p>Bootcamp Responsibilities:</p>
-        <p className="form-responsibilities-list">
-          - responsible for implementation of all technological aspects of product<br />
-          - attend team meetings<br />
-          - complete assigned tasks by the given deadline<br />
-          - update Tech Lead and PM with any relevant issues<br />
+        <p>
+          Please answer the following questions if you are interested in bootcamp. We will be especially looking at the quality of 
+          your responses since you will not be interviewed for this role.
+        </p>
+        <p>
+          Bootcamp essentially teaches members the foundation to join a project team. In bootcamp, students learn web development 
+          skills starting from basic HTML, JavaScript, and CSS and then building up to the MERN (MongoDB, Express, React, Node.js) 
+          stack. The goal is for members to complete bootcamp and then join a project team the following semester. Similar to project 
+          teams, we are looking for motivated and committed students to join bootcamp and continue working with our nonprofit partners. 
+          The bootcamp workflow involves weekly bootcamp meetings, doing the bootcamp assignments during the week, and chapter wide 
+          meetings monthly. The time commitment is around 3-5 hours a week.
         </p>
         <TextAnswer
           heading="Tell us why you are interested in joining the bootcamp."
           subHeading="Please limit your response to a short paragrah (250 words)."
           value={sectionFormData.interest}
           onChange={(value) => onFormDataChange("interest", value)}
-          placeholder="Long answer text"
           required
         />
 
@@ -53,7 +59,6 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
           heading="Tell us about a time you had to learn a new skill to accomplish a task."
           value={sectionFormData.newSkill}
           onChange={(value) => onFormDataChange("newSkill", value)}
-          placeholder="Long answer text"
           required
         />
 
@@ -61,9 +66,14 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
           heading="Describe a time when you had to persist through a significant challenge. How did you approach it and what did you learn from that experience?"
           value={sectionFormData.challengePersist}
           onChange={(value) => onFormDataChange("challengePersist", value)}
-          placeholder="Long answer text"
           required
         />
+
+        
+        <div className="form-button-container">
+          <button className="form-btn form-btn-back">Back</button>
+          <button className="form-btn form-btn-continue">Continue</button>
+        </div>
       </div>
     </div>
   );

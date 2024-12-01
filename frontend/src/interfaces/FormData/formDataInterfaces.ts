@@ -63,6 +63,34 @@ export interface SourcingData {
   npoExp: string;
 }
 
+// General Information questions
+export interface GeneralInfoData {
+  email: string;
+  name: string;
+  preferredName: string;
+  year: string;
+  major: string;
+  minor: string;
+  csClasses: string[];
+  csTopics: string[];
+  skills: string;
+  resume: File;
+  whyH4I: string;
+  differences: string;
+  awareness: string;
+  commitments: string;
+  involvement: string;
+  initiative: string;
+  giveBack: string;
+}
+
+export interface DemographicData {
+  pronouns: string;
+  gender: string;
+  transgender: string;
+  race: string[];
+}
+
 // All forms will need to import this interface to update the state in the
 // parent.
 export interface FormProps<T extends object> {

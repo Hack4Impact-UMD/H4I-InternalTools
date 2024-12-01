@@ -19,12 +19,17 @@
 
 .form-input {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 18px;
   width: 50%;
 }
 
 .form-sublabel {
   font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.form-options-container label{
+  color: #7B7B7B;
 }
 
 /* Forms */
@@ -39,6 +44,7 @@
   text-align: center;
   font-size: 40px;
   margin: 20px;
+  padding-bottom: 20px;
 }
 
 .form-responsibilities-list {
@@ -53,4 +59,44 @@
   background-color: #fff;
   font-size: 18px;
   margin: 20px;
+}
+
+.form-logo {
+  padding: 2px 20px;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-btn {
+  flex: 1;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form-btn-back {
+  background-color: white;
+  border: 3px solid #2969C4;
+}
+
+.form-btn-back:hover {
+  background-color: #e7f3ff;
+}
+
+.form-btn-continue {
+  background-color: #2969C4;
+  color: white;
+  border: 2px solid #2969C4;
+}
+
+.form-btn-continue:hover {
+  background-color: #0056b3;
 }

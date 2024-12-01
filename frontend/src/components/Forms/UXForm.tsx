@@ -1,20 +1,21 @@
 import React from "react";
-import { UXData } from "../../interfaces/FormData/formDataInterfaces";
+import {
+  FormProps,
+  UXData,
+} from "../../interfaces/FormData/formDataInterfaces";
 import FileUpload from "../FormComponents/FileUpload";
 
 import Radiobox from "../FormComponents/Radiobox";
 import TextAnswer from "../FormComponents/TextAnswer";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
+import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'UX_form_data';
 
-
-interface UXFormProps {
-  onFormDataChange: (field: keyof UXData, value: any) => void;
-  sectionFormData: UXData;
-}
-
-const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) => {
+  const UXForm: React.FC<FormProps<UXData>> = ({
+    onFormDataChange,
+    sectionFormData,
+  }) => {
 
     useFormPersistence(
         STORAGE_KEY,
@@ -29,16 +30,29 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
       );
 
   return (
-    <div>
-        <div>
-        <strong>UX Application Questions</strong> add description...
+    <div className="form-body">
+      <img className="form-logo" src={h4iLogo} alt="H4I" />
+        <div className="form-heading">
+          <strong>Project Team Questions: Designer</strong>
         </div>
+
+        <div className="form-questions">
+          <p>Designer Responsibilities:</p>
+          <p className="form-responsibilities-list">
+            - responsible for creating the frontend designs for the product based on nonprofit needs<br />
+            - attends team meetings<br />
+            - attends meetings with nonprofit and PM<br />
+            - meets with Director of Design to discuss project progression<br />
+            - walkthrough designs and get nonprofit's feedback<br />
+            - communicate with engineers on designs and whether or not they are feasible<br />
+            - complete tasks by the given deadline so that the engineers have enough time to do their tasks as well<br />
+            - provide feedback to engineers on their implementation of the designs<br />
+          </p>
 
         <TextAnswer
             heading="Why do you want to become a Designer at Hack4Impact-UMD?"
             value={sectionFormData.whyUX}
             onChange={(value) => onFormDataChange("whyUX", value)}
-            placeholder="Long answer text"
             required
         />
 
@@ -46,7 +60,6 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading="Why are you a strong fit for the Designer role?"
             value={sectionFormData.strongFit}
             onChange={(value) => onFormDataChange("strongFit", value)}
-            placeholder="Long answer text"
             required
         />
 
@@ -54,7 +67,6 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading = "Describe your design workflow."
             value = {sectionFormData.workflow}
             onChange = {(value) => onFormDataChange("workflow", value)}
-            placeholder="Long answer text"
             required
         />
 
@@ -62,7 +74,6 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading = "How do you respond to negative feedback from a client/stakeholder?"
             value={sectionFormData.situationalResponse}
             onChange={(value) => onFormDataChange("situationalResponse", value)}
-            placeholder="Long answer text"
             required
         />
 
@@ -70,7 +81,6 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading = "How do you collaborate with other designers and engineers? Please also discuss how you would handle conflicts within a team."
             value={sectionFormData.collaboration}
             onChange={(value) => onFormDataChange("collaboration", value)}
-            placeholder="Long answer text"
             required
         />
 
@@ -78,25 +88,23 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading = "Tell us about your experience using Figma. If you have not used Figma before, please tell us about your experience using other design applications."
             value={sectionFormData.figmaExp}
             onChange={(value) => onFormDataChange("figmaExp", value)}
-            placeholder="Long answer text"
             required
         />
 
         <Radiobox
             heading = "How many year of design-related experience do you have?"
-            options = {["0", "1", "2", "3"]}
+            options = {["0", "1", "2", "3+"]}
             value = {sectionFormData.yoe}
             onChange={(value) => onFormDataChange("yoe", value)}
             choiceName = "Years of experience"
             required
-            other
         />
 
         <TextAnswer
             heading = "Provide a link to your portfolio."
             value={sectionFormData.portfolio}
             onChange={(value) => onFormDataChange("portfolio", value)}
-            placeholder = "Portfolio link"
+            shortAnswer
             required
         />
 
@@ -104,6 +112,13 @@ const UXForm: React.FC<UXFormProps> = ({ onFormDataChange, sectionFormData }) =>
             heading = "Upload any additional supporting attachments. (You may also upload a file as your porfolio if you prefer)"
             onChange = {(file) => onFormDataChange("attachments", file)}
         />
+
+        
+        <div className="form-button-container">
+          <button className="form-btn form-btn-back">Back</button>
+          <button className="form-btn form-btn-continue">Continue</button>
+        </div>
+      </div>
     </div>
   );
 };
