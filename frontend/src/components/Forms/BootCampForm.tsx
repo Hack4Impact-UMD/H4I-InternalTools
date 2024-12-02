@@ -9,7 +9,7 @@ import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'product_manager_form_data';
 
-// Consider the question of interest in applying for porject teams
+// Consider the question of interest in applying for project teams
 const BootCampForm: React.FC<FormProps<BootCampData>> = ({
   onFormDataChange,
   sectionFormData,

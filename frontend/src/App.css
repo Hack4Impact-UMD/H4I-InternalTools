@@ -100,3 +100,21 @@
 .form-btn-continue:hover {
   background-color: #0056b3;
 }
+
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 15.625rem;
+  background-color: #ECECEC; /* Ensure background color is set to grey */
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
+}
+
+.content-container {
+  flex-grow: 1; /* Allow the content container to take up the remaining space */
+  padding: 1rem; /* Apply padding */
+  overflow-y: auto;
+}
