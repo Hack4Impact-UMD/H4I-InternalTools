@@ -91,6 +91,10 @@ export interface DemographicData {
   race: string[];
 }
 
+export interface RolesData {
+  roles: string[];
+}
+
 // All forms will need to import this interface to update the state in the
 // parent.
 export interface FormProps<T extends object> {
