@@ -184,11 +184,15 @@ const STORAGE_KEY = 'general_info_form_data';
             required
           />
           
+          {/* Buttons to navigate back and forth between forms */}
           <div className="form-button-container">
-            <button className="form-btn form-btn-back">Back</button>
+            <button 
+              className="form-btn form-btn-back"
+              onClick={() => navigate("/Overview")}
+            >Back</button>
             <button 
               className="form-btn form-btn-continue"
-              onClick={() => navigate("/Bootcamp")}
+              onClick={() => navigate("/Demographic-Questions")}
             >Continue</button>
           </div>
         </div>

@@ -65,9 +65,9 @@ const AppContent = () => {
                   path="/Choose-Role(s)"
                   element={
                     <ChooseRolesForm
-                      sectionFormData={formData.generalInfoData}
+                      sectionFormData={formData.rolesData}
                       onFormDataChange={(field, value, otherUnchecked) =>
-                        handleFormDataChange("generalInfoData", field, value, otherUnchecked)
+                        handleFormDataChange("rolesData", field, value, otherUnchecked)
                       }
                     />
                   }

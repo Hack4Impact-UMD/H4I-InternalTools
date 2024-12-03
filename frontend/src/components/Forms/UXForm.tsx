@@ -8,6 +8,7 @@ import FileUpload from "../FormComponents/FileUpload";
 import Radiobox from "../FormComponents/Radiobox";
 import TextAnswer from "../FormComponents/TextAnswer";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
+import { useNavigate } from "react-router-dom";
 import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'UX_form_data';
@@ -16,6 +17,8 @@ const STORAGE_KEY = 'UX_form_data';
     onFormDataChange,
     sectionFormData,
   }) => {
+
+    const navigate = useNavigate();
 
     useFormPersistence(
         STORAGE_KEY,
@@ -113,10 +116,18 @@ const STORAGE_KEY = 'UX_form_data';
             onChange = {(file) => onFormDataChange("attachments", file)}
         />
 
-        
+        {/* Buttons to navigate back and forth between forms */}
         <div className="form-button-container">
-          <button className="form-btn form-btn-back">Back</button>
-          <button className="form-btn form-btn-continue">Continue</button>
+          {/* This needs to be fixed to go to either choose roles or the previous selected role */}
+          <button 
+            className="form-btn form-btn-back"
+            onClick={() => navigate("/Product-Manager")}
+          >Back</button>
+          {/* This needs to be fixed to go to either submit or the next selected role */}
+          <button 
+            className="form-btn form-btn-continue"
+            onClick={() => navigate("/Engineer")}
+          >Continue</button>
         </div>
       </div>
     </div>

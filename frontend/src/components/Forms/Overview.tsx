@@ -1,6 +1,9 @@
 import h4iLogo from '../../assets/h4i_logo.png';
+import { useNavigate } from "react-router-dom";
   
 const Overview = () => {
+
+  const navigate = useNavigate();
 
     return (
       <div className="form-body">
@@ -94,9 +97,13 @@ const Overview = () => {
           <p>
             All admission decisions will be communicated to applicants no later than August 30, 2024.
           </p>
-
+          
+          {/* Button to navigate back and forth between forms */}
           <div className="form-button-container">
-            <button className="form-btn form-btn-continue">Continue</button>
+            <button 
+              className="form-btn form-btn-continue"
+              onClick={() => navigate("/General-Information")}
+            >Continue</button>
           </div>
         </div>
       </div>

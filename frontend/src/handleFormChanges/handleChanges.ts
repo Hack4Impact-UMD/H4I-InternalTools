@@ -12,6 +12,7 @@ import {
   SourcingData,
   TechLeadData,
   UXData,
+  RolesData
 } from "../interfaces/FormData/formDataInterfaces";
 
 export const handleChanges = () => {
@@ -27,6 +28,7 @@ export const handleChanges = () => {
     sourcingData: SourcingData;
     generalInfoData: GeneralInfoData;
     demographicData: DemographicData;
+    rolesData: RolesData;
     // Add more form types (engineer, sourcing, etc.) when nec,
     // and update "formDataInterfaces.ts" accordingly
   }
@@ -39,7 +41,8 @@ export const handleChanges = () => {
     UXData: {} as UXData,
     sourcingData: {} as SourcingData,
     generalInfoData: {} as GeneralInfoData,
-    demographicData: {} as DemographicData
+    demographicData: {} as DemographicData,
+    rolesData: {} as RolesData
   });
 
   type FormSection = keyof FormDataMap;

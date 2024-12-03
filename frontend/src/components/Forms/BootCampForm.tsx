@@ -72,13 +72,17 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
           required
         />
 
-        
+        {/* Buttons to navigate back and forth between forms */}
         <div className="form-button-container">
           <button 
             className="form-btn form-btn-back"
-            onClick={() => navigate("/General-Information")}
+            onClick={() => navigate("/Choose-Role(s)")}
           >Back</button>
-          <button className="form-btn form-btn-continue">Continue</button>
+          {/* This needs to be fixed to go to either submit or the next selected role */}
+          <button 
+            className="form-btn form-btn-continue"
+            onClick={() => navigate("/sourcing")}
+          >Continue</button>
         </div>
       </div>
     </div>
