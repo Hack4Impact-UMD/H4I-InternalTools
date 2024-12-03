@@ -99,7 +99,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
         {/*<Link to="/login">I don't know the company domain</Link>*/}
         {/*Placeholder for switching to admin login view*/}
         <a
-          href="https://www.figma.com/design/Nb7ipRTxIbdi6QclO5p6md/Hack4Impact?node-id=120-237&node-type=frame"
+          href="/forgotPassword"
           target="_blank"
           rel="noopener noreferrer"
           className="switch-link"
@@ -136,7 +136,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
           {/*<Link to="/login">I don't know the company domain</Link>*/}
           {/*Placeholder for link to page that helps with company domain*/}
           <a
-            href="https://www.figma.com/design/Nb7ipRTxIbdi6QclO5p6md/Hack4Impact?node-id=120-237&node-type=frame"
+            href="/forgotPassword"
             target="_blank"
             rel="noopener noreferrer"
             className="domain-link"
@@ -144,6 +144,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
             I don't know my password
           </a>
         </p>
+        
       </div>
       {loginError && <div className="error-message">{loginError}</div>}
     </div>
