@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./loginCard.css";
-
 import { FirebaseApp, FirebaseOptions, getApp, initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -9,6 +8,8 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import firebaseConfig from "../../../backend/config/firebase";
+import { useAuth } from "../../../backend/config/AuthProvider.tsx";
+
 
 interface LoginCardProps {
   title: string;
@@ -43,7 +44,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
   };
 
   // Handle button click
-  const handleClick = async () => {
+    const handleClick = async () => {
     const auth = getAuth(firebaseApp);
     const firestore = getFirestore(firebaseApp);
 
@@ -70,8 +71,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
         const userData = userDoc.data();
         // setUserType(userData?.userType || null);
         // console.log(userData.userType);
-        // setSchoolDistrictId(userData?.schoolDistrictId || "Unknown");
-        console.log(userData.schoolDistrictId);
+       console.log(userData.schoolDistrictId);
       } else {
         setLoginError("User data not found");
       }
@@ -141,7 +141,7 @@ function LoginCard({ title, otherTitle, prompt }: LoginCardProps) {
             rel="noopener noreferrer"
             className="domain-link"
           >
-            I don't know the company domain
+            I don't know my password
           </a>
         </p>
       </div>
