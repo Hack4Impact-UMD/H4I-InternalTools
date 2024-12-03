@@ -20,9 +20,9 @@ const SideBar: React.FC = () => {
   const roleSections: { [key: string]: string } = {
     "Bootcamp": "/Bootcamp",
     "Sourcing": "/Sourcing",
-    "Project Manager": "/Project-Manager",
+    "Product Manager": "/Product-Manager",
     "UX/Design": "/UX-Design",
-    "Engineering": "/Engineering",
+    "Engineer": "/Engineer",
     "Tech Lead": "/Tech-Lead"
   };
 
@@ -60,7 +60,7 @@ const SideBar: React.FC = () => {
                     to={roleSections[role]}
                     className={({ isActive }) => (isActive ? 'nav-item active sub-link' : 'nav-item sub-link')}
                     onClick={() => handleSectionClick(role)}
-                    key={role}
+                    key ={role}
                   >
                     <div className="nav-link">
                       <span className="sub-item">{role}</span>
