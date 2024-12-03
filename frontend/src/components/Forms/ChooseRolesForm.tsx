@@ -94,7 +94,7 @@ const STORAGE_KEY = 'general_info_form_data';
             heading="What roles do you want to apply for?"
             options={["Bootcamp", "Designer", "Engineer", "Product Manager (PM)", "Tech Lead", "Sourcing Team"]}
             onChange={(value, otherUnchecked) =>
-                onFormDataChange("roles", value, otherUnchecked)
+                onFormDataChange("roles", [value], otherUnchecked)
             }
             choiceName="roles"
           />
