@@ -3,37 +3,22 @@
 
 import React, { useState } from "react";
 import { checkboxes } from "../Options/checkboxes"; // Add or remove checkboxes from here as necessary.
-import {
+import { 
+  FormDataMap,
   BootCampData,
-  DemographicData,
-  EngineerData,
-  GeneralInfoData,
   ProductManagerData,
-  SourcingData,
+  EngineerData,
   TechLeadData,
   UXData,
+  SourcingData,
+  GeneralInfoData,
+  DemographicData,
   RolesData
-} from "../interfaces/FormData/formDataInterfaces";
+ } from "../interfaces/FormData/formDataInterfaces";
 
 export const handleChanges = () => {
 
-  // This interface maps each form section to its specific datatype which allows
-  // TS to infer the correct type of data based on formSection.
-  interface FormDataMap {
-    bootCampData: BootCampData;
-    productManagerData: ProductManagerData;
-    engineerData: EngineerData;
-    techLeadData: TechLeadData;
-    UXData: UXData;
-    sourcingData: SourcingData;
-    generalInfoData: GeneralInfoData;
-    demographicData: DemographicData;
-    rolesData: RolesData;
-    // Add more form types (engineer, sourcing, etc.) when nec,
-    // and update "formDataInterfaces.ts" accordingly
-  }
-
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataMap>({
     bootCampData: {} as BootCampData,
     productManagerData: {} as ProductManagerData,
     engineerData: {} as EngineerData,

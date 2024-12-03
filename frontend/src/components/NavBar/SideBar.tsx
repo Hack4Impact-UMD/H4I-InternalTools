@@ -13,7 +13,8 @@ const SideBar: React.FC = () => {
     "Overview": "/Overview",
     "General Information": "/General-Information",
     "Demographic Questions": "/Demographic-Questions",
-    "Choose Role(s)": "/Choose-Role(s)"
+    "Choose Role(s)": "/Choose-Role(s)",
+    "Submit": "/Submit"
   };
 
   // these are the various roles (sub-sections) we have in the sidebar!
@@ -71,7 +72,7 @@ const SideBar: React.FC = () => {
             )}
           </React.Fragment>
         ))}
-        {/* we have to handle our submit button seperately  */}
+        {/* we have to handle our submit button seperately  
         <NavLink
           to="/Submit"
           className={({ isActive }) => (isActive ? `nav-item active ${formComplete ? '' : 'disabled'}` : `nav-item ${formComplete ? '' : 'disabled'}`)}
@@ -80,7 +81,7 @@ const SideBar: React.FC = () => {
           <div className="nav-link">
             <span>Submit</span>
           </div>
-        </NavLink>
+        </NavLink>*/}
       </div>
     </div>
   );

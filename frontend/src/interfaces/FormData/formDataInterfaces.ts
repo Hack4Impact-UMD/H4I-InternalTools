@@ -84,6 +84,7 @@ export interface GeneralInfoData {
   giveBack: string;
 }
 
+// Demographics questions
 export interface DemographicData {
   pronouns: string;
   gender: string;
@@ -91,8 +92,25 @@ export interface DemographicData {
   race: string[];
 }
 
+// Choosing roles
 export interface RolesData {
   roles: string[];
+}
+
+// This interface maps each form section to its specific datatype which allows
+// TS to infer the correct type of data based on formSection.
+export interface FormDataMap {
+  bootCampData: BootCampData;
+  productManagerData: ProductManagerData;
+  engineerData: EngineerData;
+  techLeadData: TechLeadData;
+  UXData: UXData;
+  sourcingData: SourcingData;
+  generalInfoData: GeneralInfoData;
+  demographicData: DemographicData;
+  rolesData: RolesData;
+  // Add more form types (engineer, sourcing, etc.) when nec,
+  // and update "formDataInterfaces.ts" accordingly
 }
 
 // All forms will need to import this interface to update the state in the

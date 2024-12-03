@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Myanmar+Khyay&display=swap');
 
 /* General Styles */
 .red-text {
@@ -41,6 +42,10 @@
   margin: 20px 40px;
 }
 
+.form-body-submit {
+  background-color: #CBF9F3;
+}
+
 .form-heading {
   text-align: center;
   font-size: 40px;
@@ -77,6 +82,7 @@
 .form-btn {
   flex: 1;
   font-size: 18px;
+  font-family: 'Myanmar Khyay', sans-serif;
   padding: 10px 20px;
   margin: 10px 10px;
   border-radius: 50px;
@@ -102,6 +108,32 @@
   background-color: #0056b3;
 }
 
+.form-btn-back-submit {
+  background-color: white;
+  border: 3px solid #CBF9F3;
+}
+
+.form-btn-back-submit:hover {
+  background-color: #D9FBF6;
+}
+
+.form-btn-submit {
+  background-color: #CBF9F3;
+  border: 2px solid #CBF9F3;
+}
+
+.form-btn-submit:hover {
+  background-color: #A4E4D6;
+}
+
+.form-submit-heading {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-submit-sections {
+}
 
 .app-container {
   display: flex;

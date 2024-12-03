@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { handleChanges } from "./handleFormChanges/handleChanges"; // Add the path to the handleChanges file
 import headerLogo from './assets/header_logo.png';
+import ReviewandSubmit from "./components/Forms/Submit";
 
 const AppContent = () => {
   const { isAuthenticated, signOut } = useAuth();
@@ -149,7 +150,7 @@ const AppContent = () => {
                     />
                   }
                 />
-                
+                <Route path="/Submit" element={<ReviewandSubmit />} />
               </Routes>
             </div>
           </div>
