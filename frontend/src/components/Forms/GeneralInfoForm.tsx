@@ -7,6 +7,7 @@ import Radiobox from "../FormComponents/Radiobox";
 import Checkbox from "../FormComponents/Checkbox";
 import FileUpload from "../FormComponents/FileUpload";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
+import { useNavigate } from "react-router-dom";
 import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'general_info_form_data';
@@ -15,6 +16,8 @@ const STORAGE_KEY = 'general_info_form_data';
     onFormDataChange,
     sectionFormData,
   }) => {
+
+    const navigate = useNavigate();
 
     useFormPersistence(
       STORAGE_KEY,
@@ -183,7 +186,10 @@ const STORAGE_KEY = 'general_info_form_data';
           
           <div className="form-button-container">
             <button className="form-btn form-btn-back">Back</button>
-            <button className="form-btn form-btn-continue">Continue</button>
+            <button 
+              className="form-btn form-btn-continue"
+              onClick={() => navigate("/Bootcamp")}
+            >Continue</button>
           </div>
         </div>
       </div>

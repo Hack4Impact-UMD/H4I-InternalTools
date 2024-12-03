@@ -5,6 +5,7 @@ import {
 
 import TextAnswer from "../FormComponents/TextAnswer";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
+import { useNavigate } from "react-router-dom";
 import h4iLogo from '../../assets/h4i_logo.png';
 
 const STORAGE_KEY = 'product_manager_form_data';
@@ -14,6 +15,8 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
   onFormDataChange,
   sectionFormData,
 }) => {
+
+  const navigate = useNavigate();
 
   useFormPersistence(
     STORAGE_KEY,
@@ -71,7 +74,10 @@ const BootCampForm: React.FC<FormProps<BootCampData>> = ({
 
         
         <div className="form-button-container">
-          <button className="form-btn form-btn-back">Back</button>
+          <button 
+            className="form-btn form-btn-back"
+            onClick={() => navigate("/General-Information")}
+          >Back</button>
           <button className="form-btn form-btn-continue">Continue</button>
         </div>
       </div>
