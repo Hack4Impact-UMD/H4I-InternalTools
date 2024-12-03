@@ -16,120 +16,142 @@ import SignIn from "./components/test-auth/SignIn"; // signincomponent from othe
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { handleChanges } from "./handleFormChanges/handleChanges"; // Add the path to the handleChanges file
+import headerLogo from './assets/header_logo.png';
 
 const AppContent = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, signOut } = useAuth();
   const { formData, handleFormDataChange } = handleChanges();
   const [formComplete, setFormComplete] = useState<boolean>(false);
 
+  const handleSignOut = () => {
+    signOut(); // Call the sign-out function
+  };
+
+
   return (
     <div className="app-container d-flex">
+      
       {isAuthenticated ? (
         <>
-          <SideBar />
-          <div className="content-container">
-            <Routes>
-              <Route path="/Overview" element={<Overview />} />
-              <Route
-                path="/General-Information"
-                element={
-                  <GeneralInfoForm
-                    sectionFormData={formData.generalInfoData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("generalInfoData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Choose-Role(s)"
-                element={
-                  <ChooseRolesForm
-                    sectionFormData={formData.generalInfoData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("generalInfoData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Bootcamp"
-                element={
-                  <BootCampForm
-                    sectionFormData={formData.bootCampData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("bootCampData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Product-Manager"
-                element={
-                  <ProductManagerForm
-                    sectionFormData={formData.productManagerData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("productManagerData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Engineer"
-                element={
-                  <EngineerForm
-                    sectionFormData={formData.engineerData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("engineerData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Tech-Lead"
-                element={
-                  <TechLeadForm
-                    sectionFormData={formData.techLeadData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("techLeadData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/UX-Design"
-                element={
-                  <UXForm
-                    sectionFormData={formData.UXData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("UXData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Sourcing"
-                element={
-                  <SourcingForm
-                    sectionFormData={formData.sourcingData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("sourcingData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/Demographic-Questions"
-                element={
-                  <DemographicForm
-                    sectionFormData={formData.demographicData}
-                    onFormDataChange={(field, value, otherUnchecked) =>
-                      handleFormDataChange("demographicData", field, value, otherUnchecked)
-                    }
-                  />
-                }
-              />
-            </Routes>
+          <header className="app-header">
+            <div className="header-right">
+              <button className="signout-button" onClick={handleSignOut}>Sign Out</button>
+            </div>
+            <div className="header-left">
+              <img src={headerLogo} alt="Hack4Impact UMD" className="header-logo" />
+            </div>
+            <div className="header-center">
+              <button className="tab-button active">Application</button>
+              <button className="tab-button">Status</button>
+            </div>
+          </header>
+          <div className="sidebar-content">
+            <SideBar />
+            <div className="content-container">
+              <Routes>
+                <Route path="/Overview" element={<Overview />} />
+                <Route
+                  path="/General-Information"
+                  element={
+                    <GeneralInfoForm
+                      sectionFormData={formData.generalInfoData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("generalInfoData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Choose-Role(s)"
+                  element={
+                    <ChooseRolesForm
+                      sectionFormData={formData.generalInfoData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("generalInfoData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Bootcamp"
+                  element={
+                    <BootCampForm
+                      sectionFormData={formData.bootCampData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("bootCampData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Product-Manager"
+                  element={
+                    <ProductManagerForm
+                      sectionFormData={formData.productManagerData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("productManagerData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Engineer"
+                  element={
+                    <EngineerForm
+                      sectionFormData={formData.engineerData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("engineerData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Tech-Lead"
+                  element={
+                    <TechLeadForm
+                      sectionFormData={formData.techLeadData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("techLeadData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/UX-Design"
+                  element={
+                    <UXForm
+                      sectionFormData={formData.UXData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("UXData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Sourcing"
+                  element={
+                    <SourcingForm
+                      sectionFormData={formData.sourcingData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("sourcingData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                <Route
+                  path="/Demographic-Questions"
+                  element={
+                    <DemographicForm
+                      sectionFormData={formData.demographicData}
+                      onFormDataChange={(field, value, otherUnchecked) =>
+                        handleFormDataChange("demographicData", field, value, otherUnchecked)
+                      }
+                    />
+                  }
+                />
+                
+              </Routes>
+            </div>
           </div>
         </>
       ) : (
