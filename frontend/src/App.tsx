@@ -8,9 +8,10 @@ import SignIn from "./components/test-auth/SignIn"; // signincomponent from othe
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { GeneralInfoData, BootCampData } from "./interfaces/FormData/formDataInterfaces"; // Import interfaces
+import headerLogo from './assets/header_logo.png';
 
 const AppContent = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, signOut } = useAuth();
   const [formComplete, setFormComplete] = useState<boolean>(false);
 
   // declaring the intial states for all our forms, we will have to update this
@@ -51,35 +52,53 @@ const AppContent = () => {
     setGeneralInfoData((prevData) => ({ ...prevData, [field]: value }));
   };
 
+  const handleSignOut = () => {
+    signOut(); // Call the sign-out function
+  };
+
   // what is put onto the screen!
   return (
     <div className="app-container d-flex">
       {isAuthenticated ? (
         <>
-          <SideBar />
-          <div className="content-container">
-            <Routes>
-              <Route
-                path="/General-Information"
-                element={
-                  <GeneralInfoForm
-                    sectionFormData={generalInfoData}
-                    onFormDataChange={handleGeneralInfoChange}
-                  />
-                }
-              />
-              <Route
-                path="/Bootcamp"
-                element={
-                  <BootCampForm
-                    sectionFormData={formData}
-                    onFormDataChange={handleFormDataChange}
-                    // formComplete={formComplete}
-                    // setFormComplete={setFormComplete}
-                  />
-                }
-              />
-            </Routes>
+          <header className="app-header">
+            <div className="header-right">
+              <button className="signout-button" onClick={handleSignOut}>Sign Out</button>
+            </div>
+            <div className="header-left">
+              <img src={headerLogo} alt="Hack4Impact UMD" className="header-logo" />
+            </div>
+            <div className="header-center">
+              <button className="tab-button active">Application</button>
+              <button className="tab-button">Status</button>
+            </div>
+          </header>
+          <div className="sidebar-content">
+            <SideBar />
+            <div className="content-container">
+              <Routes>
+                <Route
+                  path="/General-Information"
+                  element={
+                    <GeneralInfoForm
+                      sectionFormData={generalInfoData}
+                      onFormDataChange={handleGeneralInfoChange}
+                    />
+                  }
+                />
+                <Route
+                  path="/Bootcamp"
+                  element={
+                    <BootCampForm
+                      sectionFormData={formData}
+                      onFormDataChange={handleFormDataChange}
+                      // formComplete={formComplete}
+                      // setFormComplete={setFormComplete}
+                    />
+                  }
+                />
+              </Routes>
+            </div>
           </div>
         </>
       ) : (

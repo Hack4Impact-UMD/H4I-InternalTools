@@ -38,6 +38,7 @@
   font-family: 'Karla', sans-serif;
   border-radius: 8px;
   padding: 20px 2px;
+  margin: 20px 40px;
 }
 
 .form-heading {
@@ -67,7 +68,7 @@
 
 .form-button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px; 
   width: 50%;
   margin: 0 auto;
@@ -104,7 +105,14 @@
 
 .app-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
+}
+
+.sidebar-content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
 }
 
 .sidebar {
@@ -117,4 +125,56 @@
   flex-grow: 1; /* Allow the content container to take up the remaining space */
   padding: 1rem; /* Apply padding */
   overflow-y: auto;
+}
+
+/* General Header Styling */
+.app-header {
+  padding: 0px 20px;
+  padding-top: 10px;
+  background: linear-gradient(to right, #C2E0FB, #C6EBF7, #CBF9F3);
+}
+
+.header-logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.header-center {
+  display: flex;
+  gap: 15px;
+  margin-left: 14.4rem;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0px;
+  border-top-left-radius: 10px; /* Round top-left corner */
+  border-top-right-radius: 10px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333333;
+}
+
+.tab-button.active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.tab-button:not(.active) {
+  background-color: #D9D9D9;
+}
+
+.header-right {
+  display: flex;
+  justify-content: end;
+}
+
+.signout-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #333333;
+  cursor: pointer;
 }
