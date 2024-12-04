@@ -82,7 +82,7 @@
 .form-btn {
   flex: 1;
   font-size: 18px;
-  font-family: 'Myanmar Khyay', sans-serif;
+  font-family: 'Myanmar Khyay', sans-serif !important;
   padding: 10px 20px;
   margin: 10px 10px;
   border-radius: 50px;
@@ -95,7 +95,9 @@
 }
 
 .form-btn-back:hover {
-  background-color: #e7f3ff;
+  background-color: #C8E0F9;
+  border-color: transparent;
+  color: #71818F;
 }
 
 .form-btn-continue {
@@ -105,7 +107,9 @@
 }
 
 .form-btn-continue:hover {
-  background-color: #0056b3;
+  background-color: #C8E0F9;
+  border-color: transparent;
+  color: #71818F;
 }
 
 .form-btn-back-submit {
@@ -114,7 +118,8 @@
 }
 
 .form-btn-back-submit:hover {
-  background-color: #D9FBF6;
+  background-color: #D4F8F3;
+  color: #71818F;
 }
 
 .form-btn-submit {
@@ -123,7 +128,8 @@
 }
 
 .form-btn-submit:hover {
-  background-color: #A4E4D6;
+  background-color: #D4F8F3;
+  color: #71818F;
 }
 
 .form-submit-heading {
