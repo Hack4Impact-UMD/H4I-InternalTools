@@ -74,7 +74,7 @@ export interface GeneralInfoData {
   csClasses: string[];
   csTopics: string[];
   skills: string;
-  resume: File;
+  resume: string;
   whyH4I: string;
   differences: string;
   awareness: string;

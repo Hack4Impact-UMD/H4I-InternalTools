@@ -5,6 +5,7 @@ interface TextProps {
   subHeading?: string;
   value: string;
   onChange: (value: string) => void;
+  placeholder?: string;
   shortAnswer?: boolean;
   required?: boolean;
 }
@@ -14,6 +15,7 @@ const TextAnswer: React.FC<TextProps> = ({
   subHeading,
   value,
   onChange,
+  placeholder,
   shortAnswer,
   required,
 }) => {
@@ -46,7 +48,7 @@ const TextAnswer: React.FC<TextProps> = ({
         value={value}
         onChange={handleChange}
         required={required}
-        placeholder={shortAnswer ? "Insert Text" : "Type Here..."}
+        placeholder={placeholder || (shortAnswer ? "Insert Text" : "Type Here...")}
         style={{
           resize: shortAnswer ? "none" : "vertical", // Disable resizing for short answers
           overflow: "hidden",

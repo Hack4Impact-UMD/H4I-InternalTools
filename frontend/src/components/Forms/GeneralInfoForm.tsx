@@ -102,7 +102,7 @@ const STORAGE_KEY = 'general_info_form_data';
           />
 
           <Checkbox
-            heading="What CS classes have you taken?"
+            heading="Technical Skills"
             subHeading="We consider applicants with all experience levels! You are not required to have technical experience, just 
             a willingness to learn. People with fewer technical skills, but sufficient interest and passion, may be placed on a 
             bootcamp group. If you don't have any of these yet, don't worry (especially if you're interested in sourcing). Please 
@@ -125,9 +125,13 @@ const STORAGE_KEY = 'general_info_form_data';
             required
           />
 
-          <FileUpload
+          <TextAnswer
             heading="Resume"
-            onChange={(file) => onFormDataChange("resume", file)}
+            subHeading="Submit a link to your resume"
+            value={sectionFormData.resume}
+            onChange={(value) => onFormDataChange("resume", value)}
+            placeholder="Insert resume link"
+            shortAnswer
             required
           />
 

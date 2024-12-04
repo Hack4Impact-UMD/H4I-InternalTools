@@ -72,10 +72,12 @@ const ReviewandSubmit: React.FC = () => {
     
             {/* Demographic Questions Section */}
             <div>
-                <h2>Demographic Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Demographic Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Demographic Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Demographic Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Pronouns:</strong> {formData.demographicData.pronouns}</p>
                 <p><strong>Gender:</strong> {formData.demographicData.gender}</p>
                  Add other fields */}
@@ -83,19 +85,23 @@ const ReviewandSubmit: React.FC = () => {
     
             {/* Roles Section */}
             <div>
-                <h2>Choose Roles</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Choose Roles")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Choose Roles</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Choose Roles")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Roles:</strong> {formData.rolesData.roles.join(", ")}</p>*/}
             </div>
 
             {/* Bootcamp Questions Section */}
             <div>
-                <h2>Bootcamp Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Bootcamp Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Bootcamp Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Bootcamp Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -103,10 +109,12 @@ const ReviewandSubmit: React.FC = () => {
 
             {/* Sourcing Questions Section */}
             <div>
-                <h2>Sourcing Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Sourcing Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Sourcing Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Sourcing Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -114,10 +122,12 @@ const ReviewandSubmit: React.FC = () => {
 
             {/* Product Manager Questions Section */}
             <div>
-                <h2>Product Manager Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Product Manager Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Product Manager Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Product Manager Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -125,10 +135,12 @@ const ReviewandSubmit: React.FC = () => {
 
             {/* UX/Design Questions Section */}
             <div>
-                <h2>UX/Design Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("UX/Design Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">UX/Design Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("UX/Design Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -136,10 +148,12 @@ const ReviewandSubmit: React.FC = () => {
     
             {/* Engineer Questions Section */}
             <div>
-                <h2>Engineer Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Engineer Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Engineer Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Engineer Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -147,10 +161,12 @@ const ReviewandSubmit: React.FC = () => {
 
             {/* Tech Lead Questions Section */}
             <div>
-                <h2>Tech Lead Questions</h2>
-                <button className="form-btn form-btn-submit" onClick={() => handleEdit("Tech Lead Questions")}>
-                    Edit Section
-                </button>
+                <div className="form-submit-sections">
+                    <p className="form-submit-heading">Tech Lead Questions</p>
+                    <button className="form-btn form-btn-submit" onClick={() => handleEdit("Tech Lead Questions")}>
+                        Edit Section
+                    </button>
+                </div>
                 {/*<p><strong>Why do you want to be an Engineer?</strong></p>
                 <p>{formData.engineerData.whyEngineer}</p>
                  Add other fields */}
@@ -162,7 +178,7 @@ const ReviewandSubmit: React.FC = () => {
                     Back
                 </button>
                 <button className="form-btn form-btn-submit" onClick={handleSubmit}>
-                    Submit Application
+                    Submit
                 </button>
             </div>
         </div>
