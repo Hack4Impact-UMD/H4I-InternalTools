@@ -5,7 +5,6 @@ import {
 import TextAnswer from "../FormComponents/TextAnswer";
 import Radiobox from "../FormComponents/Radiobox";
 import Checkbox from "../FormComponents/Checkbox";
-import FileUpload from "../FormComponents/FileUpload";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
 import { useNavigate } from "react-router-dom";
 import h4iLogo from '../../assets/h4i_logo.png';
@@ -64,7 +63,7 @@ const STORAGE_KEY = 'general_info_form_data';
           />
     
           <Radiobox
-            heading="Are you familiar with using Notion"
+            heading="Year in School"
             options={["Freshman", "Sophomore", "Junior", "Senior"]}
             value={sectionFormData.year}
             onChange={(value) => onFormDataChange("year", value)}

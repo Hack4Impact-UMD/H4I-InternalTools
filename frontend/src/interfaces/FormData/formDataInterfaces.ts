@@ -51,7 +51,6 @@ export interface UXData {
   figmaExp: string;
   yoe: string;
   portfolio: string;
-  attachments: File;
 }
 
 // Questions for the Sourcing application

@@ -3,8 +3,6 @@ import {
   FormProps,
   UXData,
 } from "../../interfaces/FormData/formDataInterfaces";
-import FileUpload from "../FormComponents/FileUpload";
-
 import Radiobox from "../FormComponents/Radiobox";
 import TextAnswer from "../FormComponents/TextAnswer";
 import { useFormPersistence } from '../../hooks/useFormPersistence';
@@ -104,16 +102,11 @@ const STORAGE_KEY = 'UX_form_data';
         />
 
         <TextAnswer
-            heading = "Provide a link to your portfolio."
+            heading = "Share your portfolio or previous design projects"
             value={sectionFormData.portfolio}
             onChange={(value) => onFormDataChange("portfolio", value)}
             shortAnswer
             required
-        />
-
-        <FileUpload
-            heading = "Upload any additional supporting attachments. (You may also upload a file as your porfolio if you prefer)"
-            onChange = {(file) => onFormDataChange("attachments", file)}
         />
 
         {/* Buttons to navigate back and forth between forms */}
